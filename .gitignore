@@ -1,0 +1,12 @@
+.idea/.*
+.idea/copyright/*
+.idea/libraries/*
+workspace.xml
+*.iml
+src/main/resources/META-INF/keys/*.prv
+*.class
+target/classes
+target/classes/log4j2.xml
+target/surefire-reports/*.xml
+target/site/jacoco-ut/*.html
+
