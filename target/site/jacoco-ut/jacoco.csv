@@ -1,5 +1,16 @@
 GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
-Mark Test Projects,prv.mark.test.domain,SoldierWithOverriddenEqualsAndHashCode,18,104,4,6,6,19,7,8,3,7
-Mark Test Projects,prv.mark.test.domain,SoldierWithOverriddenEquals,20,80,5,5,6,15,8,6,3,6
-Mark Test Projects,prv.mark.test.domain,SoldierWithOverriddenHashCode,12,71,0,0,6,13,3,6,3,6
+Mark Test Projects,prv.mark.test.domain,Staff,0,43,0,0,0,11,0,8,0,8
+Mark Test Projects,prv.mark.test.domain,JsonViewEmployee,100,57,0,0,20,20,11,10,11,10
+Mark Test Projects,prv.mark.test.domain,EnumGender,9,37,0,0,0,7,2,3,2,3
+Mark Test Projects,prv.mark.test.domain,Views.Normal,3,0,0,0,1,0,1,0,1,0
+Mark Test Projects,prv.mark.test.domain,Soldier.Builder,0,34,0,0,0,12,0,7,0,7
+Mark Test Projects,prv.mark.test.domain,Soldier,89,60,6,0,16,20,11,8,8,8
+Mark Test Projects,prv.mark.test.domain,SoldierWithOverriddenEqualsAndHashCode,22,66,3,3,8,12,8,5,5,5
+Mark Test Projects,prv.mark.test.domain,SoldierWithOverriddenEquals,22,62,3,3,8,11,8,4,5,4
+Mark Test Projects,prv.mark.test.domain,EnumPlanet,11,131,0,0,2,15,3,5,3,5
+Mark Test Projects,prv.mark.test.domain,Views,3,0,0,0,1,0,1,0,1,0
+Mark Test Projects,prv.mark.test.domain,Person,0,45,0,0,0,19,0,13,0,13
+Mark Test Projects,prv.mark.test.domain,EnumDayofWeek,5,96,0,0,0,12,1,4,1,4
+Mark Test Projects,prv.mark.test.domain,SoldierWithOverriddenHashCode,18,47,0,0,8,8,5,4,5,4
+Mark Test Projects,prv.mark.test.domain,Views.Manager,3,0,0,0,1,0,1,0,1,0
 Mark Test Projects,prv.mark.test,MarkSpringApplication,15,0,0,0,5,0,3,0,3,0

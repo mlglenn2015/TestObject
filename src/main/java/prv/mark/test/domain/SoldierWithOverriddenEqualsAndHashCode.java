@@ -49,18 +49,12 @@ public class SoldierWithOverriddenEqualsAndHashCode {
 
         SoldierWithOverriddenEqualsAndHashCode testOject = (SoldierWithOverriddenEqualsAndHashCode) o;
 
-        if (!getName().equals(testOject.getName())) return false;
-        if (!getRank().equals(testOject.getRank())) return false;
         return getSerialNumber().equals(testOject.getSerialNumber());
-
     }
 
     @Override
     public int hashCode() {
-        int result = getName().hashCode();
-        result = 31 * result + getRank().hashCode();
-        result = 31 * result + getSerialNumber().hashCode();
-        return result;
+        return getSerialNumber().hashCode();
     }
 
     @Override

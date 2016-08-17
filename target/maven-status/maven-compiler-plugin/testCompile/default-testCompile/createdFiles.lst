@@ -1,1 +1,6 @@
+prv\mark\test\domain\EnumDayofWeekTests.class
+prv\mark\test\domain\SoldierTestsUsingLambdas.class
+prv\mark\test\domain\Jackson2JsonTests.class
+prv\mark\test\domain\EnumPlanetTests.class
+prv\mark\test\domain\SoldierTestsUsingLambdas$1.class
 prv\mark\test\domain\EqualsAndHashCodeMethodTests.class

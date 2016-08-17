@@ -18,7 +18,7 @@ public class SoldierWithOverriddenEqualsAndHashCode {
 <span class="fc" id="L18">    }</span>
 
     public String getName() {
-<span class="fc" id="L21">        return name;</span>
+<span class="nc" id="L21">        return name;</span>
     }
 
     public void setName(String name) {
@@ -26,7 +26,7 @@ public class SoldierWithOverriddenEqualsAndHashCode {
 <span class="nc" id="L26">    }</span>
 
     public String getRank() {
-<span class="fc" id="L29">        return rank;</span>
+<span class="nc" id="L29">        return rank;</span>
     }
 
     public void setRank(String rank) {
@@ -49,23 +49,17 @@ public class SoldierWithOverriddenEqualsAndHashCode {
 
 <span class="fc" id="L50">        SoldierWithOverriddenEqualsAndHashCode testOject = (SoldierWithOverriddenEqualsAndHashCode) o;</span>
 
-<span class="fc bfc" id="L52" title="All 2 branches covered.">        if (!getName().equals(testOject.getName())) return false;</span>
-<span class="pc bpc" id="L53" title="1 of 2 branches missed.">        if (!getRank().equals(testOject.getRank())) return false;</span>
-<span class="fc" id="L54">        return getSerialNumber().equals(testOject.getSerialNumber());</span>
-
+<span class="fc" id="L52">        return getSerialNumber().equals(testOject.getSerialNumber());</span>
     }
 
     @Override
     public int hashCode() {
-<span class="fc" id="L60">        int result = getName().hashCode();</span>
-<span class="fc" id="L61">        result = 31 * result + getRank().hashCode();</span>
-<span class="fc" id="L62">        result = 31 * result + getSerialNumber().hashCode();</span>
-<span class="fc" id="L63">        return result;</span>
+<span class="fc" id="L57">        return getSerialNumber().hashCode();</span>
     }
 
     @Override
     public String toString() {
-<span class="fc" id="L68">        return &quot;SoldierWithOverriddenEqualsAndHashCode{&quot; +</span>
+<span class="fc" id="L62">        return &quot;SoldierWithOverriddenEqualsAndHashCode{&quot; +</span>
                 &quot;name='&quot; + name + '\'' +
                 &quot;, rank='&quot; + rank + '\'' +
                 &quot;, serialNumber='&quot; + serialNumber + '\'' +

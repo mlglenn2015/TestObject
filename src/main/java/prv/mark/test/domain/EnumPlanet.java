@@ -1,6 +1,13 @@
 package prv.mark.test.domain;
 
 /**
+ * Enumeration representing the planets in our solar system.
+ * <p>
+ *     There are 2 arguments to the enumeration:<br/>
+ *     1. Mass of the planet in kilograms<br/>
+ *     2. Radius of the planet in meters<br/>
+ * </p>
+ *
  * Created by mlglenn on 8/16/2016.
  */
 public enum EnumPlanet {
@@ -25,9 +32,22 @@ public enum EnumPlanet {
         this.radius = radius;
     }
 
+    /**
+     * Returns the surface gravitational pull of the planet
+     * based on the mass of the planet, the radius of the planet,
+     * and the universal gravitational constant.
+     *
+     * @return
+     */
     public double surfaceGravity() {
         return EnumPlanet.G * mass / (radius * radius);
     }
+
+    /**
+     *
+     * @param otherMass
+     * @return
+     */
     public double surfaceWeight(double otherMass) {
         return otherMass * surfaceGravity();
     }

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Staff.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Mark Test Projects</a> &gt; <a href="index.source.html" class="el_package">prv.mark.test.domain</a> &gt; <span class="el_source">Staff.java</span></div><h1>Staff.java</h1><pre class="source lang-java linenums">package prv.mark.test.domain;
+
+import java.math.BigDecimal;
+import java.util.List;
+
+/**
+ * Created by mlglenn on 8/17/2016.
+ */
+public class Staff extends Person {
+
+    private String position;
+    private BigDecimal salary;
+    private List&lt;String&gt; skills;
+
+<span class="fc" id="L15">    public Staff() {}</span>
+
+    public String getPosition() {
+<span class="fc" id="L18">        return position;</span>
+    }
+
+    public void setPosition(String position) {
+<span class="fc" id="L22">        this.position = position;</span>
+<span class="fc" id="L23">    }</span>
+
+    public BigDecimal getSalary() {
+<span class="fc" id="L26">        return salary;</span>
+    }
+
+    public void setSalary(BigDecimal salary) {
+<span class="fc" id="L30">        this.salary = salary;</span>
+<span class="fc" id="L31">    }</span>
+
+    public List&lt;String&gt; getSkills() {
+<span class="fc" id="L34">        return skills;</span>
+    }
+
+    public void setSkills(List&lt;String&gt; skills) {
+<span class="fc" id="L38">        this.skills = skills;</span>
+<span class="fc" id="L39">    }</span>
+
+    @Override
+    public String toString() {
+<span class="fc" id="L43">        return &quot;Staff{&quot; +</span>
+                &quot;position='&quot; + position + '\'' +
+                &quot;, salary=&quot; + salary +
+                '}';
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

@@ -18,7 +18,7 @@ public class SoldierWithOverriddenHashCode {
 <span class="fc" id="L18">    }</span>
 
     public String getName() {
-<span class="fc" id="L21">        return name;</span>
+<span class="nc" id="L21">        return name;</span>
     }
 
     public void setName(String name) {
@@ -26,7 +26,7 @@ public class SoldierWithOverriddenHashCode {
 <span class="nc" id="L26">    }</span>
 
     public String getRank() {
-<span class="fc" id="L29">        return rank;</span>
+<span class="nc" id="L29">        return rank;</span>
     }
 
     public void setRank(String rank) {
@@ -43,15 +43,12 @@ public class SoldierWithOverriddenHashCode {
 
     @Override
     public int hashCode() {
-<span class="fc" id="L46">        int result = getName().hashCode();</span>
-<span class="fc" id="L47">        result = 31 * result + getRank().hashCode();</span>
-<span class="fc" id="L48">        result = 31 * result + getSerialNumber().hashCode();</span>
-<span class="fc" id="L49">        return result;</span>
+<span class="fc" id="L46">        return getSerialNumber().hashCode();</span>
     }
 
     @Override
     public String toString() {
-<span class="fc" id="L54">        return &quot;SoldierWithOverriddenHashCode{&quot; +</span>
+<span class="fc" id="L51">        return &quot;SoldierWithOverriddenHashCode{&quot; +</span>
                 &quot;name='&quot; + name + '\'' +
                 &quot;, rank='&quot; + rank + '\'' +
                 &quot;, serialNumber='&quot; + serialNumber + '\'' +

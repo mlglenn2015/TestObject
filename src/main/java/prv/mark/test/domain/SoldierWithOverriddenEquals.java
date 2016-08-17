@@ -1,7 +1,7 @@
 package prv.mark.test.domain;
 
 /**
- * Class implementing overridden equals().
+ * Example class implementing overridden equals().
  *
  * Created by mlglenn on 5/16/2016.
  */
@@ -49,10 +49,7 @@ public class SoldierWithOverriddenEquals {
 
         SoldierWithOverriddenEquals that = (SoldierWithOverriddenEquals) o;
 
-        if (!getName().equals(that.getName())) return false;
-        if (!getRank().equals(that.getRank())) return false;
         return getSerialNumber().equals(that.getSerialNumber());
-
     }
 
     @Override

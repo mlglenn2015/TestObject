@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Person.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Mark Test Projects</a> &gt; <a href="index.source.html" class="el_package">prv.mark.test.domain</a> &gt; <span class="el_source">Person.java</span></div><h1>Person.java</h1><pre class="source lang-java linenums">package prv.mark.test.domain;
+
+/**
+ * Example Person superclass for Java demos.
+ *
+ * Created by mlglenn on 8/16/2016.
+ */
+public class Person {
+
+    private String fname;
+    private String lname;
+    private String mname;
+    private String otherName;
+    private String gender;
+    //private LocalDate birthDate;
+    private String idNumber;
+
+<span class="fc" id="L18">    public Person() {}</span>
+
+    /**
+     * Method to calculate a person's age based on the date they were
+     * born and the current date.
+     *
+     * @return int value containing the age in years of the person
+     */
+    /*public int getAge() {
+        LocalDate today = LocalDate.now();
+        if ((birthDate != null) &amp;&amp; (today != null)) {
+            return Period.between(birthDate, today).getYears();
+        } else {
+            return 0;
+        }
+    }*/
+
+    public String getFname() {
+<span class="fc" id="L36">        return fname;</span>
+    }
+
+    public void setFname(String fname) {
+<span class="fc" id="L40">        this.fname = fname;</span>
+<span class="fc" id="L41">    }</span>
+
+    public String getLname() {
+<span class="fc" id="L44">        return lname;</span>
+    }
+
+    public void setLname(String lname) {
+<span class="fc" id="L48">        this.lname = lname;</span>
+<span class="fc" id="L49">    }</span>
+
+    public String getMname() {
+<span class="fc" id="L52">        return mname;</span>
+    }
+
+    public void setMname(String mname) {
+<span class="fc" id="L56">        this.mname = mname;</span>
+<span class="fc" id="L57">    }</span>
+
+    public String getOtherName() {
+<span class="fc" id="L60">        return otherName;</span>
+    }
+
+    public void setOtherName(String otherName) {
+<span class="fc" id="L64">        this.otherName = otherName;</span>
+<span class="fc" id="L65">    }</span>
+
+    public String getGender() {
+<span class="fc" id="L68">        return gender;</span>
+    }
+
+    public void setGender(String gender) {
+<span class="fc" id="L72">        this.gender = gender;</span>
+<span class="fc" id="L73">    }</span>
+
+    /*public LocalDate getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(LocalDate birthDate) {
+        this.birthDate = birthDate;
+    }*/
+
+    public String getIdNumber() {
+<span class="fc" id="L84">        return idNumber;</span>
+    }
+
+    public void setIdNumber(String idNumber) {
+<span class="fc" id="L88">        this.idNumber = idNumber;</span>
+<span class="fc" id="L89">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

@@ -43,10 +43,7 @@ public class SoldierWithOverriddenHashCode {
 
     @Override
     public int hashCode() {
-        int result = getName().hashCode();
-        result = 31 * result + getRank().hashCode();
-        result = 31 * result + getSerialNumber().hashCode();
-        return result;
+        return getSerialNumber().hashCode();
     }
 
     @Override
