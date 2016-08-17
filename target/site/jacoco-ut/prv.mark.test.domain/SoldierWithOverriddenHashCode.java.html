@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>SoldierWithOverriddenHashCode.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Mark Test Projects</a> &gt; <a href="index.source.html" class="el_package">prv.mark.test.domain</a> &gt; <span class="el_source">SoldierWithOverriddenHashCode.java</span></div><h1>SoldierWithOverriddenHashCode.java</h1><pre class="source lang-java linenums">package prv.mark.test.domain;
+
+/**
+ * Class implementing overridden hashCode().
+ *
+ * Created by mlglenn on 5/16/2016.
+ */
+public class SoldierWithOverriddenHashCode {
+
+    private String name;
+    private String rank;
+    private String serialNumber;
+
+<span class="fc" id="L14">    public SoldierWithOverriddenHashCode(String name, String rank, String serialNumber) {</span>
+<span class="fc" id="L15">        this.name = name;</span>
+<span class="fc" id="L16">        this.rank = rank;</span>
+<span class="fc" id="L17">        this.serialNumber = serialNumber;</span>
+<span class="fc" id="L18">    }</span>
+
+    public String getName() {
+<span class="fc" id="L21">        return name;</span>
+    }
+
+    public void setName(String name) {
+<span class="nc" id="L25">        this.name = name;</span>
+<span class="nc" id="L26">    }</span>
+
+    public String getRank() {
+<span class="fc" id="L29">        return rank;</span>
+    }
+
+    public void setRank(String rank) {
+<span class="nc" id="L33">        this.rank = rank;</span>
+<span class="nc" id="L34">    }</span>
+
+    public String getSerialNumber() {
+<span class="fc" id="L37">        return serialNumber;</span>
+    }
+
+    public void setSerialNumber(String serialNumber) {
+<span class="nc" id="L41">        this.serialNumber = serialNumber;</span>
+<span class="nc" id="L42">    }</span>
+
+    @Override
+    public int hashCode() {
+<span class="fc" id="L46">        int result = getName().hashCode();</span>
+<span class="fc" id="L47">        result = 31 * result + getRank().hashCode();</span>
+<span class="fc" id="L48">        result = 31 * result + getSerialNumber().hashCode();</span>
+<span class="fc" id="L49">        return result;</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="fc" id="L54">        return &quot;SoldierWithOverriddenHashCode{&quot; +</span>
+                &quot;name='&quot; + name + '\'' +
+                &quot;, rank='&quot; + rank + '\'' +
+                &quot;, serialNumber='&quot; + serialNumber + '\'' +
+                '}';
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

@@ -1,0 +1,4 @@
+prv\mark\test\domain\SoldierWithOverriddenHashCode.class
+prv\mark\test\MarkSpringApplication.class
+prv\mark\test\domain\SoldierWithOverriddenEquals.class
+prv\mark\test\domain\SoldierWithOverriddenEqualsAndHashCode.class
