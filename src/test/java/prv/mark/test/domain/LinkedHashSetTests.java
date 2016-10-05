@@ -66,28 +66,29 @@ public class LinkedHashSetTests {
             }
         }
     }
-    /*
+    /* OUTPUT:
+
     10-05-2016 12:19:19.896 DEBUG prv.mark.test.domain.PlanetTests - setup()
-10-05-2016 12:19:19.900 DEBUG prv.mark.test.domain.PlanetTests - testPlanetsList()
-10-05-2016 12:19:19.901 DEBUG prv.mark.test.domain.PlanetTests - Number of planets: 9
-10-05-2016 12:19:19.902 DEBUG prv.mark.test.domain.PlanetTests - Planet{name='Mercury', positionFromTheSun=1}
-10-05-2016 12:19:19.902 DEBUG prv.mark.test.domain.PlanetTests - Planet{name='Saturn', positionFromTheSun=6}
-10-05-2016 12:19:19.902 DEBUG prv.mark.test.domain.PlanetTests - Planet{name='Venus', positionFromTheSun=2}
-10-05-2016 12:19:19.902 DEBUG prv.mark.test.domain.PlanetTests - Planet{name='Earth', positionFromTheSun=3}
-10-05-2016 12:19:19.902 DEBUG prv.mark.test.domain.PlanetTests - Planet{name='Mars', positionFromTheSun=4}
-10-05-2016 12:19:19.902 DEBUG prv.mark.test.domain.PlanetTests - Planet{name='Jupiter', positionFromTheSun=5}
-10-05-2016 12:19:19.902 DEBUG prv.mark.test.domain.PlanetTests - Planet{name='Uranus', positionFromTheSun=7}
-10-05-2016 12:19:19.902 DEBUG prv.mark.test.domain.PlanetTests - Planet{name='Pluto', positionFromTheSun=9}
-10-05-2016 12:19:19.902 DEBUG prv.mark.test.domain.PlanetTests - Planet{name='Neptune', positionFromTheSun=8}
-10-05-2016 12:19:19.903 DEBUG prv.mark.test.domain.PlanetTests -
-10-05-2016 12:19:19.903 DEBUG prv.mark.test.domain.PlanetTests - Planet{name='Mercury', positionFromTheSun=1}
-10-05-2016 12:19:19.903 DEBUG prv.mark.test.domain.PlanetTests - Planet{name='Saturn', positionFromTheSun=6}
-10-05-2016 12:19:19.903 DEBUG prv.mark.test.domain.PlanetTests - Planet{name='Venus', positionFromTheSun=2}
-10-05-2016 12:19:19.903 DEBUG prv.mark.test.domain.PlanetTests - Planet{name='Earth', positionFromTheSun=3}
-10-05-2016 12:19:19.903 DEBUG prv.mark.test.domain.PlanetTests - Planet{name='Mars', positionFromTheSun=4}
-10-05-2016 12:19:19.903 DEBUG prv.mark.test.domain.PlanetTests - Planet{name='Jupiter', positionFromTheSun=5}
-10-05-2016 12:19:19.903 DEBUG prv.mark.test.domain.PlanetTests - Planet{name='Uranus', positionFromTheSun=7}
-10-05-2016 12:19:19.903 DEBUG prv.mark.test.domain.PlanetTests - Planet{name='Neptune', positionFromTheSun=8}
-10-05-2016 12:19:19.903 DEBUG prv.mark.test.domain.PlanetTests - null
+    10-05-2016 12:19:19.900 DEBUG prv.mark.test.domain.PlanetTests - testPlanetsList()
+    10-05-2016 12:19:19.901 DEBUG prv.mark.test.domain.PlanetTests - Number of planets: 9
+    10-05-2016 12:19:19.902 DEBUG prv.mark.test.domain.PlanetTests - Planet{name='Mercury', positionFromTheSun=1}
+    10-05-2016 12:19:19.902 DEBUG prv.mark.test.domain.PlanetTests - Planet{name='Saturn', positionFromTheSun=6}
+    10-05-2016 12:19:19.902 DEBUG prv.mark.test.domain.PlanetTests - Planet{name='Venus', positionFromTheSun=2}
+    10-05-2016 12:19:19.902 DEBUG prv.mark.test.domain.PlanetTests - Planet{name='Earth', positionFromTheSun=3}
+    10-05-2016 12:19:19.902 DEBUG prv.mark.test.domain.PlanetTests - Planet{name='Mars', positionFromTheSun=4}
+    10-05-2016 12:19:19.902 DEBUG prv.mark.test.domain.PlanetTests - Planet{name='Jupiter', positionFromTheSun=5}
+    10-05-2016 12:19:19.902 DEBUG prv.mark.test.domain.PlanetTests - Planet{name='Uranus', positionFromTheSun=7}
+    10-05-2016 12:19:19.902 DEBUG prv.mark.test.domain.PlanetTests - Planet{name='Pluto', positionFromTheSun=9}
+    10-05-2016 12:19:19.902 DEBUG prv.mark.test.domain.PlanetTests - Planet{name='Neptune', positionFromTheSun=8}
+    10-05-2016 12:19:19.903 DEBUG prv.mark.test.domain.PlanetTests -
+    10-05-2016 12:19:19.903 DEBUG prv.mark.test.domain.PlanetTests - Planet{name='Mercury', positionFromTheSun=1}
+    10-05-2016 12:19:19.903 DEBUG prv.mark.test.domain.PlanetTests - Planet{name='Saturn', positionFromTheSun=6}
+    10-05-2016 12:19:19.903 DEBUG prv.mark.test.domain.PlanetTests - Planet{name='Venus', positionFromTheSun=2}
+    10-05-2016 12:19:19.903 DEBUG prv.mark.test.domain.PlanetTests - Planet{name='Earth', positionFromTheSun=3}
+    10-05-2016 12:19:19.903 DEBUG prv.mark.test.domain.PlanetTests - Planet{name='Mars', positionFromTheSun=4}
+    10-05-2016 12:19:19.903 DEBUG prv.mark.test.domain.PlanetTests - Planet{name='Jupiter', positionFromTheSun=5}
+    10-05-2016 12:19:19.903 DEBUG prv.mark.test.domain.PlanetTests - Planet{name='Uranus', positionFromTheSun=7}
+    10-05-2016 12:19:19.903 DEBUG prv.mark.test.domain.PlanetTests - Planet{name='Neptune', positionFromTheSun=8}
+    10-05-2016 12:19:19.903 DEBUG prv.mark.test.domain.PlanetTests - null
      */
 }

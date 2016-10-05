@@ -7,6 +7,7 @@ package prv.mark.test.domain;
 public class Planet {
 
     private String name;
+    private String tag;
     private int positionFromTheSun;
 
     public Planet() {}
@@ -22,6 +23,14 @@ public class Planet {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
     }
 
     public int getPositionFromTheSun() {
