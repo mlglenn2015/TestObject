@@ -200,4 +200,44 @@ public class EqualsAndHashCodeMethodTests {
 
      */
 
+    /*
+     Testing .equals() and ==
+     Both == and .equals() refers to the same object if you don't override .equals()
+     */
+    @Test
+    public void testEqualsMethodVsDoubleEqualsSign() {
+
+        //I have 3 Mangoes
+        String mango1 = "mango";
+        String mango2 = "mango";
+        String mango3 = new String("mango");
+
+        LOGGER.debug("mango1: {} ", mango1);
+        LOGGER.debug("mango2: {} ", mango2);
+        LOGGER.debug("mango3: {} ", mango3);
+
+        LOGGER.debug("System.identityHashCode(mango1): {}", System.identityHashCode(mango1));
+        LOGGER.debug("System.identityHashCode(mango2): {}", System.identityHashCode(mango2));
+        LOGGER.debug("System.identityHashCode(mango3): {}", System.identityHashCode(mango3));
+
+        /*
+        10-06-2016 17:49:31.121 DEBUG p.m.t.d.EqualsAndHashCodeMethodTests - EqualsAndHashCodeMethodTests.setUp()
+        10-06-2016 17:49:31.125 DEBUG p.m.t.d.EqualsAndHashCodeMethodTests - mango1: mango
+        10-06-2016 17:49:31.127 DEBUG p.m.t.d.EqualsAndHashCodeMethodTests - mango2: mango
+        10-06-2016 17:49:31.127 DEBUG p.m.t.d.EqualsAndHashCodeMethodTests - mango3: mango
+        10-06-2016 17:49:31.127 DEBUG p.m.t.d.EqualsAndHashCodeMethodTests - System.identityHashCode(mango1): 481511146
+        10-06-2016 17:49:31.127 DEBUG p.m.t.d.EqualsAndHashCodeMethodTests - System.identityHashCode(mango2): 481511146
+        10-06-2016 17:49:31.127 DEBUG p.m.t.d.EqualsAndHashCodeMethodTests - System.identityHashCode(mango3): 1275143523
+         */
+
+        LOGGER.debug("mango1 != mango2: {}", mango1 != mango2); //false; why? Because the identity hashcodes are equal
+        LOGGER.debug("mango1 == mango2: {}", mango1 == mango2); //true
+
+        LOGGER.debug("mango1.equals(mango2): {}", mango1.equals(mango2)); //true because String values are being compared
+
+        LOGGER.debug("mango3 != mango2: {}", mango3 != mango2); //true because identity hashcodes are not equal
+        LOGGER.debug("mango3 == mango2: {}", mango3 == mango2); //false
+
+        LOGGER.debug("mango3.equals(mango2): {}", mango3.equals(mango2)); //true because String values are being compared
+    }
 }
