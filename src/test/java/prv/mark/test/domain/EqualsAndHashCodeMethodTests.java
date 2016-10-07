@@ -231,7 +231,7 @@ public class EqualsAndHashCodeMethodTests {
          */
 
         LOGGER.debug("mango1 != mango2: {}", mango1 != mango2); //false; why? Because the identity hashcodes are equal
-        LOGGER.debug("mango1 == mango2: {}", mango1 == mango2); //true
+        LOGGER.debug("mango1 == mango2: {}", mango1 == mango2); //true Because the identity hashcodes are equal
 
         LOGGER.debug("mango1.equals(mango2): {}", mango1.equals(mango2)); //true because String values are being compared
 
