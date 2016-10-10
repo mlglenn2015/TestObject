@@ -38,7 +38,7 @@ public class MessageServiceTests {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MessageServiceTests.class);
     private MessageServiceInjector messageServiceInjector;
-    private Consumer consumer;
+    //private Consumer consumer;
 
     @Before
     public void setup() {

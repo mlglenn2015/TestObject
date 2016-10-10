@@ -12,9 +12,9 @@ import static org.junit.Assert.assertNull;
 /**
  * Created by mlglenn on 10/6/2016.
  */
-public class ShapeFactoryTests {
-    private static final Logger LOGGER = LoggerFactory.getLogger(ShapeFactoryTests.class);
-    private static final ShapeFactory shapeFactory = ShapeFactory.getInstanceThreadSafe();
+public class ShapeFactorySingletonTests {
+    private static final Logger LOGGER = LoggerFactory.getLogger(ShapeFactorySingletonTests.class);
+    private static final ShapeFactorySingleton shapeFactory = ShapeFactorySingleton.getInstanceHomeGrownThreadSafe();
 
     @Before
     public void setup() {

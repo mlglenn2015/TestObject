@@ -7,39 +7,55 @@ import org.slf4j.LoggerFactory;
  * Example Singleton Factory class https://www.tutorialspoint.com/design_pattern/factory_pattern.htm
  * Created by mlglenn on 10/6/2016.
  */
-public class ShapeFactory {
+public class ShapeFactorySingleton {
 
-    private static Logger LOGGER = LoggerFactory.getLogger(ShapeFactory.class);
-    private static ShapeFactory theInstance;
+    private static Logger LOGGER = LoggerFactory.getLogger(ShapeFactorySingleton.class);
+    private static ShapeFactorySingleton theInstance;
     private static boolean firstThread = true;
+    private static Object mutex;
 
-    private ShapeFactory() {}
+    private ShapeFactorySingleton() {}
 
-    /*
+    /* Not Thread Safe
     If a thread is preempted at Line 2 before the assignment is made, the instance member variable
     will still be null, and another thread can subsequently enter the if block. In that case, two
     distinct singleton instances will be created. Unfortunately, that scenario rarely occurs and
     is therefore difficult to produce during testing.
      */
-    public static ShapeFactory getInstance() {
+    public static ShapeFactorySingleton getInstance() {
         if (theInstance == null) {
-            theInstance = new ShapeFactory();
+            theInstance = new ShapeFactorySingleton();
         }
         return theInstance;
     }
 
-    public static ShapeFactory getInstanceThreadSafe() {
+    /* Home grown method implements thread safety */
+    public static ShapeFactorySingleton getInstanceHomeGrownThreadSafe() {
         if (theInstance == null) {
             simulateRandomActivity();
-            theInstance = new ShapeFactory();
+            theInstance = new ShapeFactorySingleton();
         }
         LOGGER.debug("Returning ShapeFactory instance...");
         return theInstance;
     }
 
-    public synchronized static ShapeFactory getSynchronizedInstance() {
+    /* synchronized keyword can be resource intensive but guarantees thread safety */
+    public static synchronized ShapeFactorySingleton getSynchronizedInstanceThreadSafe() {
         if (theInstance == null) {
-            theInstance = new ShapeFactory();
+            theInstance = new ShapeFactorySingleton();
+        }
+        return theInstance;
+    }
+
+    /* synchronized block using mutex Object() guarantees thread safety */
+    public static ShapeFactorySingleton getInstanceWithSynchronizedBlockThreadSafe() {
+        if (theInstance == null) {
+
+            synchronized (mutex) {
+                if (theInstance == null) {
+                    theInstance = new ShapeFactorySingleton();
+                }
+            }
         }
         return theInstance;
     }

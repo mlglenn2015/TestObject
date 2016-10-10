@@ -6,7 +6,7 @@ import ch.qos.logback.core.rolling.TimeBasedRollingPolicy
 
 setupAppenders()
 setupLoggers()
-jmxConfigurator()
+//jmxConfigurator()
 
 def setupAppenders() {
     def timestampFmt = "%d{MM-dd-yyyy HH:mm:ss.SSS}"
@@ -57,8 +57,9 @@ def setupAppenders() {
 }
 
 def setupLoggers() {
-    def appLogLevel = getLogLevel()
-    def statusLogLevel = Level.TRACE
+    //def appLogLevel = getLogLevel()
+    def appLogLevel = Level.DEBUG
+    def statusLogLevel = Level.DEBUG
 
     // SOAP request/response logging to console
     logger 'org.springframework.ws.client.MessageTracing.sent', getSoapTracingLevel(), ['console'], false
@@ -68,7 +69,8 @@ def setupLoggers() {
 
     // Application loggers
     logger 'prv.mark.test.domain', appLogLevel, ['console'], false
-
+    logger 'prv.mark.test.springlifecycle', appLogLevel, ['console'], false
+    logger 'prv.mark.test.dependencyinjection', appLogLevel, ['console'], false
     logger 'prv.mark.test.MarkSpringApplication', statusLogLevel, ['log_file','monitor_status','console'], false
 
     root Level.ERROR, ['console']

@@ -8,6 +8,10 @@ import org.slf4j.LoggerFactory;
  *
  * http://www.journaldev.com/2394/java-dependency-injection-design-pattern-example-tutorial
  *
+ * Java Dependency Injection design pattern allows us to remove the hard-coded dependencies and make our application loosely
+ * coupled, extendable and maintainable. We can implement dependency injection in java to move the dependency resolution from
+ * compile-time to runtime.
+ *
  * Dependency Injection in java requires at least following:
  *
  * 1. Service components should be designed with base class or interface. It’s better to prefer interfaces or
