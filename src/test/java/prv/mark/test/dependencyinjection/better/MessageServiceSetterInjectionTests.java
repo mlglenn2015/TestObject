@@ -1,11 +1,13 @@
 package prv.mark.test.dependencyinjection.better;
 
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * http://www.journaldev.com/2394/java-dependency-injection-design-pattern-example-tutorial
- *
- * Java Dependency Injection design pattern allows us to remove the hard-coded dependencies and make our application loosely
- * coupled, extendable and maintainable. We can implement dependency injection in java to move the dependency resolution from
- * compile-time to runtime.
  *
  * Dependency Injection in java requires at least following:
  *
@@ -32,7 +34,32 @@ package prv.mark.test.dependencyinjection.better;
  *
  * Created by mlglenn on 10/7/2016.
  */
-public interface MessageServiceInjector {
+public class MessageServiceSetterInjectionTests {
 
-    public Consumer getMessageConsumer();
+    private static final Logger LOGGER = LoggerFactory.getLogger(MessageServiceSetterInjectionTests.class);
+    private MsgServiceInjector messageServiceInjector;
+    private Consumer consumer;
+
+    @Before
+    public void setup() {
+        LOGGER.debug("setup()");
+    }
+
+    @After
+    public void tearDown(){
+        messageServiceInjector = null;
+        consumer = null;
+    }
+
+    @Test
+    public void testSendEmail() {
+        LOGGER.debug("MessageServiceSetterInjectionTests.testSendEmail()");
+
+        String message = "Hi Mark";
+        String recipientEmailAddress = "mark@abc.com";
+
+        messageServiceInjector = new MsgServiceInjectorImplEmail();
+        consumer = messageServiceInjector.getMessageConsumer();
+        consumer.processMessages(message, recipientEmailAddress);
+    }
 }

@@ -19,16 +19,25 @@ public class EmployeeServiceConfig {
 
     @Bean(name="employeeServiceInitializingBean")
     public EmployeeServiceInitializingBean employeeServiceInitializingBean() {
-        return new EmployeeServiceInitializingBean();
+        EmployeeServiceInitializingBean bean = new EmployeeServiceInitializingBean();
+        return bean;
     }
 
+    /*
+    <beans default-init-method="customInit" default-destroy-method="customDestroy">
+        <bean id="demoBean" class="com.howtodoinjava.task.DemoBean"></bean>
+    </beans>
+     */
     @Bean
     public EmployeeServiceCustomInitBean employeeServiceCustomInitBean() {
-        return new EmployeeServiceCustomInitBean();
+        EmployeeServiceCustomInitBean bean = new EmployeeServiceCustomInitBean();
+        return bean;
     }
+
 
     @Bean
     public EmployeeServicePostConstructBean employeeServicePostConstructBean() {
-        return new EmployeeServicePostConstructBean();
+        EmployeeServicePostConstructBean bean = new EmployeeServicePostConstructBean();
+        return bean;
     }
 }

@@ -1,8 +1,5 @@
 package prv.mark.test.dependencyinjection.better;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 /**
  * http://www.journaldev.com/2394/java-dependency-injection-design-pattern-example-tutorial
  *
@@ -35,17 +32,7 @@ import org.slf4j.LoggerFactory;
  *
  * Created by mlglenn on 10/7/2016.
  */
-public class SMSServiceImpl implements MessageService {
+public interface MsgServiceInjector {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(SMSServiceImpl.class);
-
-    @Override
-    public void sendMessage(String msg, String recipient) {
-        LOGGER.debug("SMSServiceImpl: Sending SMS msg {} to {}...", msg, recipient);
-        LOGGER.error("SMSServiceImpl: Sending SMS msg {} to {}...", msg, recipient);
-        LOGGER.info("SMSServiceImpl: Sending SMS msg {} to {}...", msg, recipient);
-        LOGGER.trace("SMSServiceImpl: Sending SMS msg {} to {}...", msg, recipient);
-
-        // implementation code here
-    }
+    Consumer getMessageConsumer();
 }

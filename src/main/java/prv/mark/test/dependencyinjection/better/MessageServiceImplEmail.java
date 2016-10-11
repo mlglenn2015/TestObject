@@ -1,13 +1,14 @@
 package prv.mark.test.dependencyinjection.better;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
  * http://www.journaldev.com/2394/java-dependency-injection-design-pattern-example-tutorial
+ *
+ * Java Dependency Injection design pattern allows us to remove the hard-coded dependencies and make our application loosely
+ * coupled, extendable and maintainable. We can implement dependency injection in java to move the dependency resolution from
+ * compile-time to runtime.
  *
  * Dependency Injection in java requires at least following:
  *
@@ -34,36 +35,19 @@ import org.slf4j.LoggerFactory;
  *
  * Created by mlglenn on 10/7/2016.
  */
-public class MessageServiceTests2 {
+public class MessageServiceImplEmail implements MessageService {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(MessageServiceTests2.class);
-    private MessageServiceInjector messageServiceInjector;
-    private Consumer consumer;
+    private static final Logger LOGGER = LoggerFactory.getLogger(MessageServiceImplEmail.class);
 
-    @Before
-    public void setup() {
-        LOGGER.debug("setup()");
-        LOGGER.error("setup()");
-        LOGGER.info("setup()");
-        LOGGER.trace("setup()");
+    public MessageServiceImplEmail() {
+        LOGGER.debug("Instantiating new MessageServiceImplEmail class...");
     }
 
-    @After
-    public void tearDown(){
-        messageServiceInjector = null;
-    }
 
-    @Test
-    public void testSendEmail() {
-        LOGGER.debug("testSendEmail()");
-        LOGGER.error("testSendEmail()");
-        LOGGER.info("testSendEmail()");
-        LOGGER.trace("testSendEmail()");
+    @Override
+    public void sendMessage(String msg, String recipient) {
+        LOGGER.debug("MessageServiceImplEmail: Sending email msg ({}) to ({}) ...", msg, recipient);
 
-        String message = "Hi Mark";
-        String recipientEmailAddress = "mark@abc.com";
-
-        messageServiceInjector = new EmailMessageServiceInjectorImpl();
-        messageServiceInjector.getMessageConsumer().processMessages(message, recipientEmailAddress);
+        // implementation code here
     }
 }

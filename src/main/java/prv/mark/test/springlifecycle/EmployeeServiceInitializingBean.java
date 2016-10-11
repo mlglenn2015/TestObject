@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * http://www.journaldev.com/2637/spring-bean-life-cycle
@@ -13,7 +14,30 @@ import org.springframework.beans.factory.InitializingBean;
 public class EmployeeServiceInitializingBean implements InitializingBean, DisposableBean {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(EmployeeServiceInitializingBean.class);
+
+    @Autowired
     private Employee employee;
+
+
+    public EmployeeServiceInitializingBean(){
+        LOGGER.debug("EmployeeServiceInitializingBean: no-args constructor called");
+    }
+
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        LOGGER.debug("EmployeeServiceInitializingBean.afterPropertiesSet(): initializing to dummy value");
+        if (employee != null) {
+            if (employee.getName() == null) {
+                employee.setName("Mark");
+            }
+        }
+    }
+
+    @Override
+    public void destroy() throws Exception {
+        LOGGER.debug("EmployeeServiceInitializingBean.destroy(): Closing resources");
+    }
 
 
     public Employee getEmployee() {
@@ -26,22 +50,4 @@ public class EmployeeServiceInitializingBean implements InitializingBean, Dispos
         this.employee = employee;
     }
 
-    public EmployeeServiceInitializingBean(){
-        LOGGER.debug("EmployeeServiceInitializingBean: no-args constructor called");
-    }
-
-    @Override
-    public void destroy() throws Exception {
-        LOGGER.debug("EmployeeServiceInitializingBean.destroy(): Closing resources");
-    }
-
-    @Override
-    public void afterPropertiesSet() throws Exception {
-        LOGGER.debug("EmployeeServiceInitializingBean.afterPropertiesSet(): initializing to dummy value");
-        if (employee != null) {
-            if (employee.getName() == null) {
-                employee.setName("Mark");
-            }
-        }
-    }
 }

@@ -15,13 +15,14 @@ public class EmployeeServicePostConstructBean {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(EmployeeServicePostConstructBean.class);
 
+    public EmployeeServicePostConstructBean(){
+        LOGGER.debug("EmployeeServicePostConstructBean: no-args constructor called");
+    }
+
+
     @PostConstruct
     public void init(){
         LOGGER.debug("EmployeeServicePostConstructBean.init() method called");
-    }
-
-    public EmployeeServicePostConstructBean(){
-        LOGGER.debug("EmployeeServicePostConstructBean: no-args constructor called");
     }
 
     @PreDestroy

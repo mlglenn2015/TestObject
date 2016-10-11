@@ -35,17 +35,21 @@ import org.slf4j.LoggerFactory;
  *
  * Created by mlglenn on 10/7/2016.
  */
-public class EmailServiceImpl implements MessageService {
+public class MsgServiceInjectorImplSMS implements MsgServiceInjector {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(EmailServiceImpl.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(MsgServiceInjectorImplSMS.class);
+
+    //Now for every service, we will have to create injector classes
+
+
+    public MsgServiceInjectorImplSMS() {
+        LOGGER.debug("Instantiating new MsgServiceInjectorImplSMS class ...");
+    }
 
     @Override
-    public void sendMessage(String msg, String recipient) {
-        LOGGER.debug("EmailServiceImpl: Sending email msg {} to {}...", msg, recipient);
-        LOGGER.error("EmailServiceImpl: Sending email msg {} to {}...", msg, recipient);
-        LOGGER.info("EmailServiceImpl: Sending email msg {} to {}...", msg, recipient);
-        LOGGER.trace("EmailServiceImpl: Sending email msg {} to {}...", msg, recipient);
+    public Consumer getMessageConsumer() {
+        LOGGER.debug("MsgServiceInjectorImplSMS: Getting SMS Message Consumer (MessageServiceImplSMS)...");
 
-        // implementation code here
+        return new ConsumerImplConstructorInjection(new MessageServiceImplSMS());
     }
 }

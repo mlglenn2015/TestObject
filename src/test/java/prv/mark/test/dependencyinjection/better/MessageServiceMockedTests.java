@@ -37,19 +37,19 @@ import org.slf4j.LoggerFactory;
 public class MessageServiceMockedTests {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MessageServiceMockedTests.class);
-    private MessageServiceInjector messageServiceInjector;
+    private MsgServiceInjector messageServiceInjector;
     private Consumer consumer;
 
     @Before
     public void setUp() {
 
         //mock the injector with anonymous class
-        messageServiceInjector = new MessageServiceInjector() {
+        messageServiceInjector = new MsgServiceInjector() {
 
             @Override
             public Consumer getMessageConsumer() {
                 //mock the message service
-                return new ApplicationMessagingExample1(new MessageService() {
+                return new ConsumerImplConstructorInjection(new MessageService() {
                     @Override
                     public void sendMessage(String msg, String rec) {
                         LOGGER.debug("Mock Message Service implementation");

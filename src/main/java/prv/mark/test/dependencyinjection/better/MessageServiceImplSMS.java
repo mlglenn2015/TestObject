@@ -4,8 +4,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * THIS APPLICATION EXAMPLE IS CONSTRUCTOR-LEVEL DI
- *
  * http://www.journaldev.com/2394/java-dependency-injection-design-pattern-example-tutorial
  *
  * Java Dependency Injection design pattern allows us to remove the hard-coded dependencies and make our application loosely
@@ -18,7 +16,6 @@ import org.slf4j.LoggerFactory;
  *    abstract classes that would define contract for the services.
  * 2. Consumer classes should be written in terms of service interface.
  * 3. Injector classes that will initialize the services and then the consumer classes.
- *
  *
  * BENEFITS of Java Dependency Injection
  *
@@ -38,30 +35,18 @@ import org.slf4j.LoggerFactory;
  *
  * Created by mlglenn on 10/7/2016.
  */
-public class ApplicationMessagingExample1 implements Consumer {
+public class MessageServiceImplSMS implements MessageService {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(ApplicationMessagingExample1.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(MessageServiceImplSMS.class);
 
-    /*
-     Notice that our application class is just using the service. It does not initialize the service
-     that leads to better “separation of concerns“. Also use of service interface allows us to easily
-     test the application by mocking the MessageService and bind the services at runtime rather than
-     compile time.
-     */
-    private MessageService messageService;
-
-    //This is using DI in the Constructor level
-    public ApplicationMessagingExample1(MessageService service) {
-        this.messageService = service;
+    public MessageServiceImplSMS() {
+        LOGGER.debug("Instantiating new MessageServiceImplSMS class...");
     }
 
+    @Override
+    public void sendMessage(String msg, String recipient) {
+        LOGGER.debug("MessageServiceImplSMS: Sending SMS msg {} to {}...", msg, recipient);
 
-    public void processMessages(String message, String recipient) {
-
-        //validation here
-
-        //implemenation logic here
-
-        this.messageService.sendMessage(message, recipient);
+        // implementation code here
     }
 }

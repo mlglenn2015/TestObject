@@ -4,8 +4,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * THIS APPLICATION EXAMPLE IS SETTER-LEVEL DI
- *
  * http://www.journaldev.com/2394/java-dependency-injection-design-pattern-example-tutorial
  *
  * Java Dependency Injection design pattern allows us to remove the hard-coded dependencies and make our application loosely
@@ -37,32 +35,30 @@ import org.slf4j.LoggerFactory;
  *
  * Created by mlglenn on 10/7/2016.
  */
-public class ApplicationMessagingExample2 implements Consumer {
+public class MsgServiceInjectorImplEmail implements MsgServiceInjector {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(ApplicationMessagingExample2.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(MsgServiceInjectorImplEmail.class);
 
-    /*
-     From Pankaj:
+    //Now for every service, we will have to create injector classes
 
-     We have used constructors to inject the dependencies in the application classes, another way is
-     to use setter method to inject dependencies in application classes. For setter method dependency
-     injection, our application class will be implemented like below:
-     */
-    private MessageService messageService;
 
-    //This is using DI at the setter level
-    public ApplicationMessagingExample2() {}
-
-    public void setMessageService(MessageService messageService) {
-        this.messageService = messageService;
+    public MsgServiceInjectorImplEmail() {
+        LOGGER.debug("Instantiating new MsgServiceInjectorImplEmail class ...");
     }
 
-    public void processMessages(String message, String recipient) {
+    @Override
+    public Consumer getMessageConsumer() {
+        LOGGER.debug("MsgServiceInjectorImplEmail: Getting Email Message Consumer (MessageServiceImplEmail) ...");
 
-        //validation here
+        return new ConsumerImplConstructorInjection(new MessageServiceImplEmail());
 
-        //implemenation logic here
+        /*
+         When using DI at the setter level, it looks like this:
 
-        this.messageService.sendMessage(message, recipient);
+            ConsumerImplConstructorInjection application = new ConsumerImplConstructorInjection();
+            application.setMessageService(new MessageServiceImplEmail());
+            return application;
+
+         */
     }
 }

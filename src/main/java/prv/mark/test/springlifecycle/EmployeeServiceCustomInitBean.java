@@ -26,10 +26,6 @@ public class EmployeeServiceCustomInitBean {
         LOGGER.debug("EmployeeServiceCustomInitBean: no-args constructor called");
     }
 
-    //pre-destroy method
-    public void destroy() throws Exception {
-        LOGGER.debug("EmployeeServiceCustomInitBean.destroy() Closing resources");
-    }
 
     //post-init method
     public void init() throws Exception {
@@ -37,6 +33,11 @@ public class EmployeeServiceCustomInitBean {
         if ((employee != null) && (employee.getName() == null)) {
             employee.setName("Mark");
         }
+    }
+
+    //pre-destroy method
+    public void destroy() throws Exception {
+        LOGGER.debug("EmployeeServiceCustomInitBean.destroy() Closing resources");
     }
 
 }
