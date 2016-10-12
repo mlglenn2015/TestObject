@@ -69,6 +69,8 @@ def setupLoggers() {
 
     // Application loggers
     logger 'prv.mark.test.domain', appLogLevel, ['console'], false
+    logger 'prv.mark.test.java8', appLogLevel, ['console'], false
+    logger 'prv.mark.test.patterns', appLogLevel, ['console'], false
     logger 'prv.mark.test.spring', appLogLevel, ['console'], false
     logger 'prv.mark.test.springlifecycle', appLogLevel, ['console'], false
     logger 'prv.mark.test.dependencyinjection', appLogLevel, ['console'], false
