@@ -4,6 +4,8 @@ import ch.qos.logback.core.ConsoleAppender
 import ch.qos.logback.core.rolling.RollingFileAppender
 import ch.qos.logback.core.rolling.TimeBasedRollingPolicy
 
+// filename: logback.groovy
+
 setupAppenders()
 setupLoggers()
 //jmxConfigurator()
@@ -74,6 +76,7 @@ def setupLoggers() {
     logger 'prv.mark.test.spring', appLogLevel, ['console'], false
     logger 'prv.mark.test.springlifecycle', appLogLevel, ['console'], false
     logger 'prv.mark.test.dependencyinjection', appLogLevel, ['console'], false
+    logger 'prv.mark.test.util', appLogLevel, ['console'], false
     logger 'prv.mark.test.MarkSpringApplication', statusLogLevel, ['log_file','monitor_status','console'], false
 
     root Level.ERROR, ['console']
